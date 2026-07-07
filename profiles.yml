@@ -1,8 +1,9 @@
-jaffle_shop:
-
+jaffle_shop_duckdb:
   target: dev
   outputs:
     dev:
       type: duckdb
-      path: 'jaffle_shop.duckdb'
-      threads: 24
+      path: >-
+        C:\Users\Edon\rosetta-dbt-studio-projects\dbtstudio_getting_started\rosetta\university_sample.duckdb
+      schema: main
+      threads: 4
