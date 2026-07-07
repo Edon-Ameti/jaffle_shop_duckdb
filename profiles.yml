@@ -3,7 +3,6 @@ jaffle_shop_duckdb:
   outputs:
     dev:
       type: duckdb
-      path: >-
-        C:\Users\Edon\rosetta-dbt-studio-projects\dbtstudio_getting_started\rosetta\university_sample.duckdb
+      path: jaffle_shop.duckdb
       schema: main
       threads: 4
