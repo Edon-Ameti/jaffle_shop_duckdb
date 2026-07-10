@@ -5,14 +5,12 @@ jobs:
       - name: dbt build
         plugin: dbt@v1
         command: dbt build
+      - name: dbt test
+        plugin: dbt@v1
+        command: dbt test
   - name: teardown
     steps:
       - name: Run teardown
         plugin: command@v1
         command: echo "TEARDOWN"
     type: cleanup
-  - name: run-dbt-command
-    steps:
-      - name: New dbt step
-        plugin: dbt@v1
-        command: dbt run
