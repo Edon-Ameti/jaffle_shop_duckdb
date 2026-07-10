@@ -5,9 +5,9 @@ jobs:
       - name: dbt build
         plugin: dbt@v1
         command: dbt build
-      - name: dbt test
+      - name: dbt seed
         plugin: dbt@v1
-        command: dbt test
+        command: dbt seed
   - name: teardown
     steps:
       - name: Run teardown
