@@ -8,6 +8,9 @@ jobs:
       - name: Generate docs
         plugin: dbt@v1
         command: dbt docs generate
+      - name: Test staging models
+        plugin: dbt@v1
+        command: dbt test --select staging
   - name: teardown
     steps:
       - name: Tear down environment
