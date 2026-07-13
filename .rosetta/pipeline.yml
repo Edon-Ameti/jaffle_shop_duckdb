@@ -1,16 +1,13 @@
-name: CI
+name: "CI"
 jobs:
-  - name: build
+  - name: "run-dbt-command"
     steps:
-      - name: Build warehouse
-        plugin: dbt@v1
-        command: dbt build
-      - name: Run data tests
+      - name: dbt test
         plugin: dbt@v1
         command: dbt test
-  - name: teardown
+  - name: "teardown"
+    type: "cleanup"
     steps:
-      - name: Clean up
+      - name: Run teardown
         plugin: command@v1
         command: echo "TEARDOWN"
-    type: cleanup
