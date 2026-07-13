@@ -2,18 +2,18 @@ name: CI
 jobs:
   - name: build
     steps:
-      - name: Compile and build models
+      - name: dbt seed
         plugin: dbt@v1
-        command: dbt build
-      - name: Generate docs
+        command: dbt seed
+      - name: dbt run
         plugin: dbt@v1
-        command: dbt docs generate
-      - name: Test staging models
+        command: dbt run
+      - name: dbt test
         plugin: dbt@v1
-        command: dbt test --select staging
+        command: dbt test
   - name: teardown
     steps:
-      - name: Tear down environment
+      - name: Run teardown
         plugin: command@v1
         command: echo "TEARDOWN"
     type: cleanup
